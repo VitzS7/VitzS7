@@ -55,9 +55,9 @@
 
 <div align="center">
 
-![Repos](https://img.shields.io/badge/Repos-4-58a6ff?style=flat-square&logo=github&logoColor=white)
-![Stars](https://img.shields.io/github/stars/VitzS7?style=flat-square&color=58a6ff&logo=github&logoColor=white&label=Stars)
-![Followers](https://img.shields.io/github/followers/VitzS7?style=flat-square&color=58a6ff&logo=github&logoColor=white&label=Followers)
+![Repos](https://raw.githubusercontent.com/VitzS7/VitzS7/output/repos.svg)
+![Stars](https://raw.githubusercontent.com/VitzS7/VitzS7/output/stars.svg)
+![Followers](https://raw.githubusercontent.com/VitzS7/VitzS7/output/followers.svg)
 
 ![GitHub Streak](https://raw.githubusercontent.com/VitzS7/VitzS7/output/streak.svg)
 

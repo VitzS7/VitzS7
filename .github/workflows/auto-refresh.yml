@@ -15,23 +15,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Update repo count and timestamp
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update timestamp
         run: |
-          TOTAL=$(gh api user --jq '.public_repos + .total_private_repos' 2>/dev/null)
-          if [ -z "$TOTAL" ] || [ "$TOTAL" = "null" ]; then
-            TOTAL=$(curl -s https://api.github.com/users/VitzS7 | jq '.public_repos')
-          fi
-          if [ -z "$TOTAL" ] || [ "$TOTAL" = "null" ]; then
-            echo "Failed to get repo count, skipping"
-            TOTAL=""
-          fi
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
           sed -i "s/<!-- last-refresh: .* -->/<!-- last-refresh: $TIMESTAMP -->/" README.md
-          if [ -n "$TOTAL" ]; then
-            sed -E -i "s|(badge/Repos-)[0-9]+|\1$TOTAL|" README.md
-          fi
           if git diff --quiet; then
             echo "No changes needed"
           else
