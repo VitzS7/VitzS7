@@ -33,11 +33,11 @@
 
 #### Languages
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://github.com/VitzS7?tab=repositories&language=java)
+[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](https://github.com/VitzS7?tab=repositories&language=kotlin)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/VitzS7?tab=repositories&language=python)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/VitzS7?tab=repositories&language=javascript)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://github.com/VitzS7?tab=repositories&language=typescript)
 
 #### Tools
 
@@ -59,7 +59,7 @@
 [![Stars](https://raw.githubusercontent.com/VitzS7/VitzS7/output/stars.svg)](https://github.com/VitzS7?tab=stars)
 [![Followers](https://raw.githubusercontent.com/VitzS7/VitzS7/output/followers.svg)](https://github.com/VitzS7?tab=followers)
 
-![GitHub Streak](https://raw.githubusercontent.com/VitzS7/VitzS7/output/streak.svg)
+[![GitHub Streak](https://raw.githubusercontent.com/VitzS7/VitzS7/output/streak.svg)](https://github.com/VitzS7)
 
 </div>
 
@@ -79,7 +79,7 @@
 
 <div align="center">
 
-![Snake animation](https://raw.githubusercontent.com/VitzS7/VitzS7/output/snake.svg)
+[![Snake animation](https://raw.githubusercontent.com/VitzS7/VitzS7/output/snake.svg)](https://github.com/VitzS7)
 
 </div>
 

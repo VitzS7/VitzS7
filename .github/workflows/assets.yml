@@ -33,7 +33,7 @@ jobs:
         uses: DenverCoder1/github-readme-streak-stats@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          options: user=VitzS7&theme=tokyonight&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=c9d1d9
+          options: user=VitzS7&theme=tokyonight&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=c9d1d9&cache_bust=2
           path: dist/streak.svg
 
       - name: Generate Activity Graph
