@@ -55,9 +55,9 @@
 
 <div align="center">
 
-![Repos](https://raw.githubusercontent.com/VitzS7/VitzS7/output/repos.svg)
-![Stars](https://raw.githubusercontent.com/VitzS7/VitzS7/output/stars.svg)
-![Followers](https://raw.githubusercontent.com/VitzS7/VitzS7/output/followers.svg)
+[![Repos](https://raw.githubusercontent.com/VitzS7/VitzS7/output/repos.svg)](https://github.com/VitzS7?tab=repositories)
+[![Stars](https://raw.githubusercontent.com/VitzS7/VitzS7/output/stars.svg)](https://github.com/VitzS7?tab=stars)
+[![Followers](https://raw.githubusercontent.com/VitzS7/VitzS7/output/followers.svg)](https://github.com/VitzS7?tab=followers)
 
 ![GitHub Streak](https://raw.githubusercontent.com/VitzS7/VitzS7/output/streak.svg)
 
