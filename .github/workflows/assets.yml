@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Generate Snake
         uses: Platane/snk/svg-only@v3
@@ -45,14 +45,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          USER=$(curl -s https://api.github.com/users/VitzS7)
+          USER=$(curl -s -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/users/VitzS7)
           FOLLOWERS=$(echo "$USER" | jq -r '.followers // "?"')
 
           REPOS_PUBLIC=$(echo "$USER" | jq -r '.public_repos // 0')
           REPOS_PRIVATE=$(echo "$USER" | jq -r '.total_private_repos // 0')
           REPOS=$((REPOS_PUBLIC + REPOS_PRIVATE))
 
-          STARS=$(curl -s "https://api.github.com/users/VitzS7/repos?per_page=100" | jq '[.[].stargazers_count] | add // 0')
+          STARS=$(curl -s -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/users/VitzS7/repos?per_page=100" | jq 'if type == "array" then [.[].stargazers_count] | add // 0 else 0 end')
 
           curl -s -o dist/repos.svg "https://img.shields.io/badge/Repos-${REPOS}-58a6ff?style=flat-square&logo=github&logoColor=white"
           curl -s -o dist/stars.svg "https://img.shields.io/badge/Stars-${STARS}-58a6ff?style=flat-square&logo=github&logoColor=white"
