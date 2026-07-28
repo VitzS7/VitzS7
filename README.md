@@ -89,9 +89,7 @@
 
 | Project | Description | Language |
 |---|---|---|
-| [**9router-kiro**](https://github.com/VitzS7/9router-kiro) | Free AI coding, connects Claude Code, Codex, Cursor to 40+ providers | ![](https://img.shields.io/badge/-Multi-blue?style=flat-square) |
 | [**reminder-me**](https://github.com/VitzS7/reminder-me) | Reminder app | ![](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white) |
-| [**MontereyRainmeter**](https://github.com/VitzS7/MontereyRainmeter) | macOS style widget pack for Windows | ![](https://img.shields.io/badge/-Rainmeter-blue?style=flat-square) |
 
 ---
 
