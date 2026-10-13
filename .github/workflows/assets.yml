@@ -36,27 +36,44 @@ jobs:
           options: user=VitzS7&theme=tokyonight&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideLabels=c9d1d9&cache_bust=2
           path: dist/streak.svg
 
+      # O deploy do github-readme-activity-graph.vercel.app foi desativado pelo Vercel
+      # (HTTP 402 DEPLOYMENT_DISABLED) e passou a devolver texto puro. Como o curl antigo
+      # salvava a resposta sem checar nada, o arquivo ia pro branch output com o texto de
+      # erro e o GitHub renderizava imagem quebrada. Se as duas fontes caírem o job FALHA
+      # de propósito: melhor manter o último SVG bom do que publicar lixo.
       - name: Generate Activity Graph
         run: |
-          curl -s -o dist/activity.svg \
-            "https://github-readme-activity-graph.vercel.app/graph?username=VitzS7&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ffffff&area=true&area_color=58a6ff&hide_border=true"
+          baixar_svg() {
+            curl -fsSL --retry 3 --retry-delay 5 --max-time 45 -o "$2" "$1" || return 1
+            if ! head -c 500 "$2" | grep -q "<svg"; then
+              echo "::warning::resposta de $1 não é SVG"
+              rm -f "$2"
+              return 1
+            fi
+          }
+
+          mkdir -p dist
+
+          baixar_svg "https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=VitzS7&theme=github_dark" dist/activity.svg \
+            || baixar_svg "https://ghchart.rshah.org/58a6ff/VitzS7" dist/activity.svg \
+            || { echo "::error::nenhuma fonte de activity graph respondeu"; exit 1; }
 
       - name: Generate Stats Badges
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          USER=$(curl -s -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/users/VitzS7)
-          FOLLOWERS=$(echo "$USER" | jq -r '.followers // "?"')
+          dados=$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/users/VitzS7) || exit 1
 
-          REPOS_PUBLIC=$(echo "$USER" | jq -r '.public_repos // 0')
-          REPOS_PRIVATE=$(echo "$USER" | jq -r '.total_private_repos // 0')
-          REPOS=$((REPOS_PUBLIC + REPOS_PRIVATE))
+          seguidores=$(echo "$dados" | jq -r '.followers // 0')
+          repos=$(echo "$dados" | jq -r '.public_repos // 0')
+          estrelas=$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/users/VitzS7/repos?per_page=100&type=owner" \
+            | jq 'if type == "array" then ([.[].stargazers_count] | add // 0) else 0 end')
 
-          STARS=$(curl -s -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/users/VitzS7/repos?per_page=100" | jq 'if type == "array" then [.[].stargazers_count] | add // 0 else 0 end')
+          mkdir -p dist
 
-          curl -s -o dist/repos.svg "https://img.shields.io/badge/Repos-${REPOS}-58a6ff?style=flat-square&logo=github&logoColor=white"
-          curl -s -o dist/stars.svg "https://img.shields.io/badge/Stars-${STARS}-58a6ff?style=flat-square&logo=github&logoColor=white"
-          curl -s -o dist/followers.svg "https://img.shields.io/badge/Followers-${FOLLOWERS}-58a6ff?style=flat-square&logo=github&logoColor=white"
+          curl -fsSL -o dist/repos.svg "https://img.shields.io/badge/Repos-${repos}-58a6ff?style=for-the-badge&logo=github&logoColor=white"
+          curl -fsSL -o dist/stars.svg "https://img.shields.io/badge/Stars-${estrelas}-58a6ff?style=for-the-badge&logo=github&logoColor=white"
+          curl -fsSL -o dist/followers.svg "https://img.shields.io/badge/Followers-${seguidores}-58a6ff?style=for-the-badge&logo=github&logoColor=white"
 
       - name: Deploy to output branch
         uses: crazy-max/ghaction-github-pages@v4
