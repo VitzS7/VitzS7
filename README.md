@@ -9,7 +9,7 @@
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/vitzs7)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/VitzS7)
 
-![Profile Views](https://komarev.com/ghpvc/?username=VitzS7&color=blueviolet&style=for-the-badge&label=PROFILE+VIEWS)
+![Profile Views](https://api.visitorbadge.io/api/visitors?path=VitzS7&label=PROFILE%20VIEWS&labelColor=%23555&countColor=%238a2be2&style=for-the-badge)
 
 </div>
 
