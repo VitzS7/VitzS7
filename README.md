@@ -98,9 +98,6 @@
 | [**materialfy**](https://github.com/VitzS7/materialfy) *(fork)* | Native Spotify client in Material 3 Expressive | ![](https://img.shields.io/badge/-Rust-000000?style=flat-square&logo=rust&logoColor=white) ![](https://img.shields.io/badge/-QML-41CD52?style=flat-square&logo=qt&logoColor=white) |
 | [**AnyPS5**](https://github.com/VitzS7/AnyPS5) *(fork)* | Automatic PS5 executable porting to Linux and Windows | ![](https://img.shields.io/badge/-C%2B%2B-00599C?style=flat-square&logo=cplusplus&logoColor=white) |
 | [**Geyser**](https://github.com/VitzS7/Geyser) *(fork)* | Java ↔ Bedrock bridge / proxy | ![](https://img.shields.io/badge/-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) |
-| [**zAuctionHouse**](https://github.com/VitzS7/zAuctionHouse) *(fork)* | Auction house plugin | ![](https://img.shields.io/badge/-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) |
-
-> Most of my day-to-day work sits in **private repos** — the Hashiras network plugin suite (Paper 1.21 + Velocity) and internal tooling.
 
 ---
 
